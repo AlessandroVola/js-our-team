@@ -1,5 +1,6 @@
 console.log(`JS OK!`);
 
+// MILESTONE 0
 // crea array dei members
 const members = [
     {
@@ -39,6 +40,7 @@ const members = [
     },
 ];
 
+// MILESTONE 1
 // stampa su console le informazione fornite dell'array
 
 for (i = 0; i < members.length; i++) {
@@ -46,3 +48,48 @@ for (i = 0; i < members.length; i++) {
     console.log(members[i].role);
     console.log(members[i].img);
 };
+
+// MILESTONE 2
+// stampa le informazioni nel dom
+
+// prendo il container dal DOM
+const containerElement = document.querySelector(`.container`);
+
+
+for (i = 0; i < members.length; i++) {
+    addedDom(members[i].name, members[i].role, members[i].img);
+}
+
+
+//funzione che crea le card per ogni persona
+function addedDom(name, role, img) {
+    let person = `          
+    <div>
+        <h4>${name}, ${role}</h4>
+        <p>${img}</p>
+    </div>`;
+
+    // aggiungo al container nel DOM
+    containerElement.innerHTML += person;
+};
+
+
+// BONUS 1
+// Trasformare la stringa foto in una immagine effettiva
+
+const containerElementPhotos = document.querySelector(`.container-photos`)
+
+function addedDomPlusPhoto(name, role, img) {
+    let person = `          
+    <div>
+        <h4>${name}, ${role}</h4>
+        <img src="img/${img}" alt="">
+    </div>`;
+
+    // aggiungo al container nel DOM
+    containerElementPhotos.innerHTML += person;
+};
+
+for (i = 0; i < members.length; i++) {
+    addedDomPlusPhoto(members[i].name, members[i].role, members[i].img);
+}
