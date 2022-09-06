@@ -39,3 +39,10 @@ const members = [
     },
 ];
 
+// stampa su console le informazione fornite dell'array
+
+for (i = 0; i < members.length; i++) {
+    console.log(members[i].name);
+    console.log(members[i].role);
+    console.log(members[i].img);
+};
